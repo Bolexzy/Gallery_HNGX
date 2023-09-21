@@ -2,7 +2,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { signOut, useSession } from "next-auth/react";
-import SignIn from "./components/SignIn";
+import SignIn from "./login_error/SignIn";
 import ImageGallery from "./components/ImageGallery";
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
             onClick={() => {
               signOut();
             }}
-            className="text-white bg-cyan-700 p-2 ring-2 rounded ring-rose-300  hover:ring-rose-400 active:ring-rose-500 focus:outline-none"
+            className="sm:text-sm text-white bg-cyan-700 p-2 ring-2 rounded ring-rose-300  hover:ring-rose-400 active:ring-rose-500 focus:outline-none"
           >
             Sign Out
           </button>

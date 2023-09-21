@@ -2,6 +2,7 @@ import React from "react";
 import AuthForm from "../components/AuthForm";
 
 const page = () => {
+  
   return (
     <div
       style={{ width: "100%", height: "100vh" }}

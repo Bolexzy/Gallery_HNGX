@@ -5,7 +5,7 @@ import imageData from "../data/data";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import styles from "../components/AuthForm.module.css";
-import style from "./ImageGallery.module.css";
+
 
 const ImageGallery = () => {
   const imgCount = 11;
