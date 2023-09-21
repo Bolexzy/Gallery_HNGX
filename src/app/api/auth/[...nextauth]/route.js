@@ -16,8 +16,7 @@ export const authOptions = {
       },
       async authorize(credentials, req) {
         const { username, password } = credentials;
-        console.log("Received credentials:", { username, password });
-        const user = { id: 1, name: "ExampleUser", email: 'user@example.com' };
+        const user = { id: 1, name: "ExampleUser", email: "user@example.com" };
 
         // If no error and we have user data, return it
         if (username === "user@example.com" && password === "1Password") {

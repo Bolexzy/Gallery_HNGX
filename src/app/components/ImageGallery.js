@@ -33,7 +33,7 @@ const ImageGallery = () => {
       const searchTags = imageData.filter((image) => {
         console.log(image.tags?.includes(search));
 
-        return image.tags?.includes(search);
+        return image.tags?.includes(search.toLowerCase());
       });
 
       setImages(searchTags);
