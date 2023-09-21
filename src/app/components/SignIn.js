@@ -5,7 +5,7 @@ import errorSvg from "../../../public/error.svg";
 
 const SignIn = () => {
   return (
-    <div className="w-1/2 h-3/7 p-4 flex flex-col justify-center justify-items-center font-sans bg-[#FFFFFF] rounded ">
+    <div className="w-full md:w-1/2 h-3/7 p-4 flex flex-col justify-center justify-items-center font-sans bg-[#FFFFFF] rounded ">
       <span className="md:text-xl sm:text-sm text-center text-rose-800 font-semibold tracking-widest mb-4">
         Not signed in
       </span>

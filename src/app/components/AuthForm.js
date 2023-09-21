@@ -48,10 +48,10 @@ const AuthForm = () => {
         handleBlur,
         handleSubmit,
       }) => (
-        <div className="w-1/2 h-3/7 p-4 flex justify-center justify-items-center font-sans">
+        <div className="w-full md:w-1/2  h-3/7 p-4 flex justify-center justify-items-center font-sans">
           <form
             onSubmit={handleSubmit}
-            className="relative bg-[#FFFFFF] flex justify-center justify-items-center w-7/12 space-y-5 p-4 rounded font-sans flex-col text-center"
+            className="relative bg-[#FFFFFF] flex justify-center justify-items-center w-full md:w-7/12 space-y-5 p-4 rounded font-sans flex-col text-center"
           >
             <span className="text-xl text-green-500 text-shadow font-bold tracking-widest mb-4">
               Login
