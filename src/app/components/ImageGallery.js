@@ -6,7 +6,6 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import styles from "../components/AuthForm.module.css";
 
-
 const ImageGallery = () => {
   const imgCount = 11;
 
@@ -136,10 +135,11 @@ const ImageGallery = () => {
                         height={150}
                       />
                       <div className="absolute bottom-0 left-0 right-0 px-3">
-                        {image.tags.map((tag) => (
+                        {image.tags.map((tag, index) => (
                           <span
                             className=" italic font-thin text-slate-50 mr-3 shadow"
                             style={{ fontSize: "0.65rem" }}
+                            key={index}
                           >
                             {tag}
                           </span>
