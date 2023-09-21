@@ -5,6 +5,7 @@ import imageData from "../data/data";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import styles from "../components/AuthForm.module.css";
+import style from "./ImageGallery.module.css";
 
 const ImageGallery = () => {
   const imgCount = 11;
@@ -115,16 +116,17 @@ const ImageGallery = () => {
             <div
               {...provided.droppableProps}
               ref={provided.innerRef}
-              className="grid place-items-center auto-cols-max auto-rows-max gap-x-3 gap-y-2 md:grid-cols-5 sm:grid-cols-3 p-4 m-0"
+              className="grid overflow-hidden place-items-center auto-cols-max auto-rows-max gap-x-3 gap-y-2 md:grid-cols-5 sm:grid-cols-3 p-4 m-0"
             >
               {images.map((image, index) => (
                 <Draggable key={image.id} draggableId={image.id} index={index}>
                   {(provided) => (
                     <div
                       {...provided.draggableProps}
+                      s
                       ref={provided.innerRef}
                       {...provided.dragHandleProps}
-                      className="shadow-lg shadow-slate-500/50 hover:drop-shadow-xl"
+                      className="relative shadow-lg shadow-slate-500/50 hover:drop-shadow-xl"
                     >
                       <Image
                         src={`/Assets/images/${image.path}.png`} // Specify the path to the image in the `public` folder
@@ -133,6 +135,16 @@ const ImageGallery = () => {
                         width={200}
                         height={150}
                       />
+                      <div className="absolute bottom-0 left-0 right-0 px-3">
+                        {image.tags.map((tag) => (
+                          <span
+                            className=" italic font-thin text-slate-50 mr-3 shadow"
+                            style={{ fontSize: "0.65rem" }}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </Draggable>
