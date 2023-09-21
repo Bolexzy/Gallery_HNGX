@@ -7,6 +7,10 @@ This project is a fully functional and responsive image gallery built with Next.
 
 To get started, follow these steps:
 
+Login on (https://gallery-hngx.vercel.app)
+username: user@example.com
+password: 1Password
+
 1. Clone the repository to your local machine.
 2. Install the project dependencies by running:
 
