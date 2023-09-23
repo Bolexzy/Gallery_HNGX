@@ -13,7 +13,7 @@ export default function Home() {
     return (
       <div className="p-4 flex flex-col justify-center justify-items-center">
         <div className="flex flex-row justify-between shadow p-4">
-          <span className="text-xl text-green-100 font-semibold tracking-widest">
+          <span className="text-sm md:text-xl text-green-100 font-semibold tracking-normal text-left md:tracking-widest">
             Welcome, {data.user?.email}
           </span>
           <button
@@ -21,7 +21,7 @@ export default function Home() {
             onClick={() => {
               signOut();
             }}
-            className="sm:text-sm text-white bg-cyan-700 p-2 ring-2 rounded ring-rose-300  hover:ring-rose-400 active:ring-rose-500 focus:outline-none"
+            className="text-sm text-white bg-cyan-700 p-1 md:p-2 ring-2 rounded ring-rose-300  hover:ring-rose-400 active:ring-rose-500 focus:outline-none"
           >
             Sign Out
           </button>

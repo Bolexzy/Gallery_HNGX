@@ -125,12 +125,12 @@ const ImageGallery = () => {
                       s
                       ref={provided.innerRef}
                       {...provided.dragHandleProps}
-                      className="relative shadow-lg shadow-slate-500/50 hover:drop-shadow-xl"
+                      className="relative shadow-lg shadow-slate-500/50 hover:drop-shadow-xl rounded"
                     >
                       <Image
                         src={`/Assets/images/${image.path}.png`} // Specify the path to the image in the `public` folder
                         alt={"gallery image"}
-                        className="image"
+                        className={`${styles.img} rounded`}
                         width={200}
                         height={150}
                       />
