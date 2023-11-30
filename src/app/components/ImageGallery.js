@@ -4,7 +4,7 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import imageData from "../data/data";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import styles from "../components/AuthForm.module.css";
+import styles from "../components/ImageGallery.module.css";
 
 const ImageGallery = () => {
   const imgCount = 11;
@@ -67,9 +67,10 @@ const ImageGallery = () => {
     );
 
   return (
-    <div className="p-5 md:p-10 mx-auto">
-      <div className="flex md:flex-row justify-between p-4 flex-col">
-        <span className="text-xl text-slate-100 font-semibold tracking-widest mb-4">
+    <div className="p-5 md:p-10 relative bg-slate-50">
+      {/* // style="background-image:linear-gradient(rgba(135, 80, 156, 0.9), rgba(135, 80, 156, 0.9)), url(img/hero-bg.jpg)" */}
+      <div className="flex md:flex-row justify-around items-center p-4 flex-col mb-4 w-full">
+        <span className="text-xl text-slate-700 font-semibold mb-4 mb-sm-0 tracking-widest">
           DnDGallery
         </span>
         <Formik
@@ -88,9 +89,9 @@ const ImageGallery = () => {
             handleBlur,
             handleSubmit,
           }) => (
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="w-6/12">
               <input
-                className="rounded border border-slate-300 p-2 shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+                className="rounded border border-slate-300 p-2 shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 w-full"
                 type="search"
                 name="search"
                 id="search"
@@ -109,51 +110,67 @@ const ImageGallery = () => {
           )}
         </Formik>
       </div>
-      <DragDropContext onDragEnd={handleDragEnd}>
-        <Droppable droppableId="images">
-          {(provided) => (
-            <div
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-              className="grid overflow-hidden place-items-center auto-cols-max auto-rows-max gap-x-3 gap-y-2 md:grid-cols-5 sm:grid-cols-3 p-4 m-0"
-            >
-              {images.map((image, index) => (
-                <Draggable key={image.id} draggableId={image.id} index={index}>
-                  {(provided) => (
-                    <div
-                      {...provided.draggableProps}
-                      s
-                      ref={provided.innerRef}
-                      {...provided.dragHandleProps}
-                      className="relative shadow-lg shadow-slate-500/50 hover:drop-shadow-xl rounded"
-                    >
-                      <Image
-                        src={`/Assets/images/${image.path}.png`} // Specify the path to the image in the `public` folder
-                        alt={"gallery image"}
-                        className={`${styles.img} rounded`}
-                        width={200}
-                        height={150}
-                      />
-                      <div className="absolute bottom-0 left-0 right-0 px-3">
-                        {image.tags.map((tag, index) => (
-                          <span
-                            className=" italic font-thin text-slate-50 mr-3 shadow"
-                            style={{ fontSize: "0.65rem" }}
-                            key={index}
-                          >
-                            {tag}
-                          </span>
-                        ))}
+
+      <div className="flex flex-col items-center">
+        <DragDropContext onDragEnd={handleDragEnd}>
+          <Droppable droppableId="images">
+            {(provided) => (
+              <div // ul.images
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+                // className="grid overflow-hidden place-items-center auto-cols-max auto-rows-max gap-x-3 gap-y-2 md:grid-cols-5 sm:grid-cols-3 p-4 m-0"
+                className="columns-2 md:columns-3 lg:columns-5 gap-4 max-w-[95%]"
+              >
+                {images.map((image, index) => (
+                  <Draggable
+                    key={image.id}
+                    draggableId={image.id}
+                    index={index}
+                  >
+                    {(provided) => (
+                      <div
+                        {...provided.draggableProps}
+                        ref={provided.innerRef}
+                        {...provided.dragHandleProps}
+                        className={`${styles.img_card} relative  mb-5`}
+                      >
+                        {/* card */}
+                        <Image
+                          src={`/Assets/images/${image.path}.png`} // Specify the path to the image in the `public` folder
+                          alt={"gallery image"}
+                          className="rounded-2xl w-full h-auto shadow-lg rounded-2xl shadow-slate-500/10 hover:drop-shadow-xl"
+                          width={200}
+                          height={150}
+                        />
+                        {/* absolute bottom-100 left-0  right-0*/}
+                        <div
+                          className={`${styles.img_tags} px-3 transition ease-in-out`}
+                          style={
+                            {
+                              // background:
+                              //   "linear-gradient(to top, rgba(0,0,0,0.7), transparent)",
+                            }
+                          }
+                        >
+                          {image.tags.map((tag, index) => (
+                            <span
+                              className="text-xs italic font-light text-slate-900 mr-3 shadow"
+                              key={index}
+                            >
+                              {`#${tag}`}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </Draggable>
-              ))}
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
-      </DragDropContext>
+                    )}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
+      </div>
     </div>
   );
 };

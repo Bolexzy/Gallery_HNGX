@@ -2,3 +2,20 @@
   position: relative;
   overflow: scroll;
 }
+
+.img {
+  max-width: 200px;
+  height: 250px;
+}
+
+.img_card {
+  overflow: hidden;
+}
+
+.img_tags {
+  transition: 0.3s ease-in-out;
+  transition: bottom 0.3s ease-in-out;
+}
+.img_card:hover .img_tags {
+  bottom: 0;
+}

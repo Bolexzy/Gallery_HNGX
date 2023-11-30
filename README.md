@@ -2,6 +2,10 @@
 
 This project is a fully functional and responsive image gallery built with Next.js. Users can log in, browse a collection of images, and use drag-and-drop functionality to rearrange them within the gallery.
 
+## Screenshot
+
+![HNGX Gallery DND](public/gallery-hngx.png)
+
 
 ## Getting Started
 
@@ -35,6 +39,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
 
 ## Learn More
 

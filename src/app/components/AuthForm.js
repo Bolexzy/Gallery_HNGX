@@ -78,9 +78,9 @@ const AuthForm = () => {
         <div className="w-full md:w-1/2  h-3/7 p-4 flex justify-center justify-items-center font-sans">
           <form
             onSubmit={handleSubmit}
-            className="relative bg-[#FFFFFF] flex justify-center justify-items-center w-full md:w-7/12 space-y-5 p-4 rounded font-sans flex-col text-center"
+            className="relative  flex justify-around items-center w-full md:w-7/12 space-y-5 p-4 rounded font-sans flex-col text-center"
           >
-            <span className="text-xl text-green-500 text-shadow font-bold tracking-widest mb-4">
+            <span className="text-2xl text-green-800 text-shadow font-bold tracking-widest mb-4">
               Login
             </span>
             <Image
@@ -127,7 +127,7 @@ const AuthForm = () => {
             {/* Click on submit button to submit the form */}
             <button
               type="submit"
-              className="text-white bg-cyan-700 p-2 focus:ring-2 rounded hover:ring-green-300 active:ring-green-500 focus:outline-none  "
+              className="w-48 text-white text-lg bg-cyan-700 shadow-inner p-3 ring-2 ring-cyan-700 focus:ring-2 rounded-xl hover:ring-green-300 active:ring-green-500 focus:outline-none  "
             >
               Login
             </button>

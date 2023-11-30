@@ -16,9 +16,7 @@ export default async function RootLayout({ children }) {
   // console.log("Session", JSON.stringify(session, null, 2));
   return (
     <html lang="en">
-      <body
-        className={`${montserrat.className} bg-primary min-h-screen min-w-screen`}
-      >
+      <body className={`${montserrat.className} min-h-screen min-w-screen`}>
         <main>
           <Provider>{children}</Provider>
         </main>

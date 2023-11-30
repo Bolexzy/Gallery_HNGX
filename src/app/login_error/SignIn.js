@@ -5,8 +5,8 @@ import errorSvg from "../../../public/error.svg";
 
 const SignIn = () => {
   return (
-    <div className="w-full md:w-1/2 h-3/7 p-4 flex flex-col justify-center justify-items-center font-sans bg-[#FFFFFF] rounded ">
-      <span className="md:text-xl sm:text-sm text-center text-rose-800 font-semibold tracking-widest mb-4">
+    <div className="w-full md:w-2/6 h-3/7 p-4 flex flex-col justify-around items-center font-sans rounded ">
+      <span className="md:text-xl sm:text-sm text-center text-rose-800 font-bold tracking-widest mb-4">
         Not signed in
       </span>
       <Image
@@ -22,7 +22,7 @@ const SignIn = () => {
         onClick={() => {
           signIn();
         }}
-        className="text-white bg-cyan-700 p-2 ring-2 rounded ring-rose-500  hover:ring-green-300 active:ring-green-500 focus:outline-none"
+        className="w-48 text-white text-lg bg-cyan-700 shadow-inner p-3 ring-2 rounded-xl ring-rose-500  hover:ring-green-300 active:ring-green-500 focus:outline-none"
       >
         Sign In
       </button>
